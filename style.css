@@ -191,3 +191,76 @@ form.contact_form{
 .form_row button:active{
   background-color: #407FC7;
 }
+
+
+@media screen and (min-width:1024px) {
+  .menu_button, .menu_button_checkbox{
+    display: none; /*尺寸大於1024時menu_button不顯示*/
+  }
+}
+
+@media screen and (max-width: 1023px){
+  /*1024px以下的都用這個樣式表，CSS都寫在這個大括號裡*/
+  .container{
+    width: auto; /*把container的大小設定為自動適應視窗大小*/
+  }
+  .menu_button{
+    float:right;
+    font-size: 25px;
+    line-height: 40px;
+    color:white;
+    background: transparent;
+    padding:0 15px;
+    border:0;
+  }
+
+  .menu_button_checkbox{
+    position: fixed;
+    top:0;
+    right:0;
+    width:55px;
+    height: 38px;
+    opacity: 0;
+  }
+
+  .menu_button_checkbox:checked ~.menu{
+    /* :checked是指當被勾選的時後會啟動*/
+    /* ~ 是”同層選擇器“，指只要跟目標物在同一層就會一起被點選*/
+    display: block;
+  }
+
+  .menu{
+    display: none;
+    margin-top: 0;
+    padding-left: 0;
+    position: fixed;
+    right: 0;      /*教材是right*/
+    top: 40px;
+    width: 150px;
+    height: 100%;
+    background: orange;
+  }
+
+  .menu li{
+    border: 0; 
+    border-radius:0; 
+  }
+
+  #my_avator{
+    width: 100%;
+    margin: auto; 
+  }
+  
+  #my_avator img{
+    display: block;
+    margin: auto;
+  }
+
+  .item{
+    max-width: 100%;  /*最大寬度不大於父層#my_work_gallery*/
+  }
+
+  form.contact_form{
+    width: 80%;
+  }
+}
